@@ -4,6 +4,8 @@ let Comscore = 0;
 const getclass = document.querySelectorAll('.choice');
 const msg = document.querySelector('#msg');
 const com_display = document.querySelector('#com-display');
+const user_display = document.querySelector('#user-display');
+
 
 const user_score = document.querySelector('#user-score');
 const com_score = document.querySelector('#comp-score');
@@ -41,6 +43,7 @@ const playgame = (GetUserChoice) => {
     
     const GetComChoice = ComChoice();
 
+
     if (GetUserChoice === GetComChoice) {
         Gamedraw();
         
@@ -65,7 +68,7 @@ const playgame = (GetUserChoice) => {
 getclass.forEach((choice) => {
     choice.addEventListener('click', ()=> {
         let GetUserChoice = choice.getAttribute('id');
-
+        user_display.innerText = "your choice :" + GetUserChoice;  
         playgame(GetUserChoice);
     })
 });
